@@ -4,7 +4,7 @@
 
     library(data.table)
     library(dplyr)   
-
+run_analysis<-function(){
 ##
 ## Reading the files containing the names of features and activities
 ##
@@ -107,6 +107,6 @@
     tidy_Data <- aggregate(. ~Subject + Activity, xtrac_Data, mean)
     tidy_Data <- tidy_Data[order(tidy_Data$Subject,tidy_Data$Activity),]
     write.table(tidy_Data, file = "Tidy_tarea.txt", row.names = FALSE)
-
+}
 
 
